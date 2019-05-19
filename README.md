@@ -45,7 +45,7 @@ EACH MILESTONE IS WORTH 25% OF THE FINAL PROJECT. LATE MILESTONES WILL NOT BE AC
 
 **Wednesday, June 5, 2019 - Milestone No. 2**: This milestone will require you and or your team to meet with the instructor to review your progress. Students are expected to have 50% of their project completed by this milestone. Create a file named **milestone2.md** and add it to your repository.
 
-**Wednesday, June 12, 2018 - Milestone No. 3**: Project Update No. 2 - This milestone will require you and or your team to meet with the instructor to review your progress. Students are expected to have 75% of their project completed by this milestone. Create a file named **milestone3.md** and add it to your repository.
+**Wednesday, June 12, 2018 - Milestone No. 3**: This milestone will require you and or your team to meet with the instructor to review your progress. Students are expected to have 75% of their project completed by this milestone. Create a file named **milestone3.md** and add it to your repository.
 
 **Wednesday, June 19, 2019**: All students will present their work to the class. Failure to present your work will result in a grade of zero for the Final Project.
 
