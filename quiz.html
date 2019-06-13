@@ -16,10 +16,16 @@
         </div>
         <div id="main">
             <div id="quiz">
-                <p id="question">The question is: </p>
-                <p id="value">The value is: </p>
-                <p id="answer">The answer is: what is </p>
-                <p id="category">The category is: </p>
+                <h2>Question <span id="currentquestion">0</span> of <span id="totalquestion">0</span>: </h2>
+                <div id="questioncategory">Category: <span id="category"></span></div>
+                <div id="questioncontent">Question: <span id="content"></span></div>
+                <div id="answerarea">
+                    Answer: <br>
+                    What is(are) <input type="text" name="useranswer" id="useranswer" placeholder="type answer here"> ?
+                    <br>
+                </div>
+                <div id="evaluation"></div>
+                <div id="buttondiv"></div>
             </div>
         </div>
     </div>
@@ -30,6 +36,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- Bootstrap JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js/quiz.js"></script>
 </body>
 </html>
