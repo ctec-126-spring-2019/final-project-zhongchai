@@ -1,77 +1,84 @@
 $(document).ready(function() {
 
-    var inputAnswer = "";
+    var questionCount = 0;
+    var numCorrect = 0;
+    var userScore = 0;
+    var difficulty = "";
     var currentQuestion = [];
-
-    // detects if the user has started up the quiz using a regular method
-    // if not, displays an error; otherwise, starts the quiz
-    if (totalQuestions == 0) {
-        $('#content').empty();
-        $('#content').html("ERROR: Quiz has not been set up yet.");
-    } else {
-        displayQuestion();
-    }
     
-function displayQuestion() {
-    // first, reset the page values
-    $('#currentquestion').html(numAnswered + 1);
-    $('#totalquestion').html(totalQuestions);
-    $('#category').empty();
-    $('#content').empty();
+    // called when the New Question button is clicked
+    $('#new').click(function() {
 
+        questionCount++;
 
-    $.ajax({
-        url: "http://jservice.io/api/random"
-    }).then(function(data) {
-        // get some data from the api and push it into an array
-        currentQuestion.push(data[0].value);
-        currentQuestion.push(data[0].category.title);
-        currentQuestion.push(data[0].question);
-        currentQuestion.push(data[0].answer);
+        // first, reset the page values
+        $('#currentquestion').html(questionCount);
+        $('#category').empty();
+        $('#difficulty').empty();
+        $('#content').empty();
+        $('#feedback').empty();
+        $('#useranswer').val("");
+        currentQuestion.length = 0;
 
-        testConditions(currentQuestion, difficulties);
+        // start api call
+        $.ajax({
+            url: "http://jservice.io/api/random"
+        }).then(function(data) {
+            // get some data from the api and push it into an array
+            currentQuestion.push(data[0].value);
+            currentQuestion.push(data[0].category.title);
+            currentQuestion.push(data[0].question);
+            currentQuestion.push(data[0].answer);
 
-        // display content into the web page
-        $('#category').html(currentQuestion[1]);
-        $('#content').html(currentQuestion[2]);
+            parseDifficulty(currentQuestion[0]);
+            var correctAnswer = currentQuestion[3]
 
+            // display content into the web page
+            $('#category').html(currentQuestion[1].charAt(0).toUpperCase() + currentQuestion[1].slice(1));
+            $('#difficulty').html(difficulty);
+            $('#content').html(currentQuestion[2]);
+
+        });
     });
 
-    function testConditions(testArray, difficulties) {
-        // TODO: test the category conditions and grab new question if it does not match
-    }
-
-    // write a button to the document to check question
-    checkQuestion();
-}
-
-function checkQuestion() {
-    // increments answered question amount by one
-    numAnswered++;
-
-    // get the input string from the page
-    // inputAnswer = ;
-
-    // if the input was correct, increment the number of correct answers
+  $('#submit').click(function() {
+    var inputAnswer = $("#useranswer").val();
     if (inputAnswer.trim().toLowerCase() === currentQuestion[3].trim().toLowerCase()) {
         numCorrect++;
-    }
-
-    // TODO: highlight correct answer
-
-    if (numAnswered == totalQuestions) {
-        // display button that leads to result screen
+        userScore += currentQuestion[0];
+        $('#feedback').html("Correct!");
     } else {
-        // display next button
+        $('#feedback').html("Sorry, the correct answer is: " + currentQuestion[3]);
     }
-}
+  });
 
-    // $.ajax({
-    //     url: "http://jservice.io/api/random"
-    // }).then(function(data) {
-    // $('#question').append(data[0].question);
-    // $('#value').append(data[0].value);
-    // $('#answer').append(data[0].answer);
-    // $('#category').append(data[0].category.title);
-    // });
-})
+  // function to turn the Jeopardy category difficulty numbers into readable words
+  var parseDifficulty = function(key) {
+    switch (key) {
+        case 100:
+        case 200:
+            difficulty = "Very Easy";
+            break;
+        case 300:
+        case 400:
+            difficulty = "Medium";
+            break;
+        case 500:
+        case 600:
+            difficulty = "Hard";
+            break;
+        case 700:
+        case 800:
+            difficulty = "Very Hard";
+            break;
+        case 900:
+        case 1000:
+            difficulty = "Super Hard";
+            break;
+        default:
+            difficulty = "Unknown";
+            break;
+    }
+  }
+
+});

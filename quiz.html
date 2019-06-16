@@ -16,16 +16,19 @@
         </div>
         <div id="main">
             <div id="quiz">
-                <h2>Question <span id="currentquestion">0</span> of <span id="totalquestion">0</span>: </h2>
-                <div id="questioncategory">Category: <span id="category"></span></div>
-                <div id="questioncontent">Question: <span id="content"></span></div>
+                <h2>Question #<span id="currentquestion">0</span>: </h2>
+                <div id="questioncategory">Category: <span id="category">None</span></div>
+                <div id="questiondifficulty">Difficulty: <span id="difficulty">None</span></div>
+                <div id="questioncontent">Question: <span id="content">Click the New Question button to start!</span></div>
                 <div id="answerarea">
                     Answer: <br>
                     What is(are) <input type="text" name="useranswer" id="useranswer" placeholder="type answer here"> ?
                     <br>
+                    <input type="submit" id="submit" name="submit" value="Submit Answer">
                 </div>
-                <div id="evaluation"></div>
-                <div id="buttondiv"></div>
+                <div id="feedback"></div>
+                <div class="button" id="new"><a href="#">New Question</a></div>
+                <div class="button" id="end"><a href="results.html">End Quiz</a></div>
             </div>
         </div>
     </div>
