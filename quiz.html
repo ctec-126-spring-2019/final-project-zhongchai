@@ -4,41 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Teko:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Z-Jeopardy | Quiz</title>
 </head>
 <body>
     <div id="wrapper">
         <div id="header">
-            <h1>Z-Jeopardy</h1>
-            <h3>Test your quiz skills!</h3>
+            <a href="index.html"><h1>Z-Jeopardy</h1></a>
         </div>
         <div id="main">
+            <div id="quiz-start">
+                 <a href="#" class="myButton" id="start">Start Quiz!</a>
+            </div>
             <div id="quiz">
-                <h2>Question #<span id="currentquestion">0</span>: </h2>
-                <div id="questioncategory">Category: <span id="category">None</span></div>
-                <div id="questiondifficulty">Difficulty: <span id="difficulty">None</span></div>
-                <div id="questioncontent">Question: <span id="content">Click the New Question button to start!</span></div>
-                <div id="answerarea">
-                    Answer: <br>
+                <div id="questionnumber" class="quizcontent"><h2>Question #<span id="currentquestion">0</span>: </h2></div>
+                <div id="quizinner">
+                    <div id="questioncategory" class="quizcontent">Category:<br><span id="category">None</span></div>
+                    <div id="questiondifficulty" class="quizcontent">Difficulty:<br><span id="difficulty">None</span></div>
+                </div>
+                <div id="questioncontent" class="quizcontent"><span id="content">Click the New Question button to start!</span></div>
+                <div id="answerarea" class="quizcontent">
                     What is(are) <input type="text" name="useranswer" id="useranswer" placeholder="type answer here"> ?
-                    <br>
+                    <br><br>
                     <input type="submit" id="submit" name="submit" value="Submit Answer">
                 </div>
-                <div id="feedback"></div>
-                <div class="button" id="new"><a href="#">New Question</a></div>
-                <div class="button" id="end"><a href="results.html">End Quiz</a></div>
+                <div id="feedback" class="quizcontent"></div>
+                <div id="buttonnav">
+                    <a href="#" class="myButton" id="new">New Question</a>&nbsp;&nbsp;
+                    <a href="results.html" class="myButton" id="end">End Quiz</a>
+                </div>
             </div>
         </div>
+        <div id="soundcontrol">
+            <audio class="my_audio" controls preload="none" loop>
+                <source src="https://ia800302.us.archive.org/3/items/JeopardyTheme/Jeopardy.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div id="footer">Z-Jeopardy site by Zhong (June) Chai</div>
     </div>
 
 <!-- jQuery -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <!-- AJAX -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<!-- Bootstrap JavaScript -->
-<script src="js/bootstrap.min.js"></script>
 <script src="js/quiz.js"></script>
 </body>
 </html>

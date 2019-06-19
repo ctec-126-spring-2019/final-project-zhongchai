@@ -1,15 +1,142 @@
 body {
 	font-family: Arial, Verdana, sans-serif;
 	font-size: 1em;
+	color: #fff;
+	background-color: rgb(120, 126, 201);
 }
 
-#wrapper {
+h1 {
+	font-family: 'Teko', sans-serif;
+}
+
+#quiz-start {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#main {
 	width: 75%;
 	margin: 0 auto;
 	padding: 2em;
-	background-color: #ddd;
+	background-color: rgb(38, 28, 75);
+}
+
+#maincontent, #results {
+	font-size: 1.2em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#quiz {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#quizinner {
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+#questioncategory, #questiondifficulty {
+	background-color: rgb(57, 45, 100);
+	padding: 12px 24px 12px 24px;
+	display: inline-block;
+}
+
+#questioncontent {
+	font-size: 1.4em;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#answerarea {
+	font-size: 1.6em;
+	line-height: 1.2em;
+	margin-bottom: 30px;
+}
+
+#soundcontrol {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+}
+
+#buttonnav {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.quizcontent {
+	font-size: 1.2em;
+	padding: 10px;
+	text-align: center;
 }
 
 h1, h2, h3 {
 	text-align: center;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+input[type=text] {
+	border: 2px solid rgb(51, 51, 51);
+	border-radius: 20px;
+	padding: 15px;
+	font-size: 1.1em;
+}
+
+input[type=submit] {
+	background-color:rgb(134, 212, 81);
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#222;
+	font-family:Arial;
+	font-size:19px;
+	padding:19px 39px;
+	text-decoration:none;
+}
+
+input[type=submit]:hover {
+	background-color: rgb(178, 255, 77);
+}
+
+.myButton {
+	background-color:#fff;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#222;
+	font-family:Arial;
+	font-size:19px;
+	padding:19px 39px;
+	text-decoration:none;
+}
+#new:hover, #start:hover, #starthome:hover {
+	background-color:#fcff50;
+}
+#end:hover {
+	background-color:#ff4242;
+	color: #fff;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+#footer {
+	text-align: center;
+	margin: 0 auto;
+	color: #000;
+	padding-top: 20px;
 }
