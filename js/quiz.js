@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     var questionCount = 0;
     var numCorrect = 0;
-    var userScore = 0;
     var difficulty = "";
     var currentQuestion = [];
 
@@ -61,8 +60,6 @@ $(document).ready(function () {
         runQuiz();
         $('#quiz-start').hide();
         $('#quiz').show();
-
-
     });
 
     // called when the New Question button is clicked
@@ -79,7 +76,6 @@ $(document).ready(function () {
         var inputAnswer = $("#useranswer").val();
         if (inputAnswer.trim().toLowerCase() === currentQuestion[3].trim().toLowerCase()) {
             numCorrect++;
-            userScore += currentQuestion[0];
             $('#feedback').html("Correct!");
         } else {
             $('#feedback').html("Sorry, the correct answer is: " + currentQuestion[3]);

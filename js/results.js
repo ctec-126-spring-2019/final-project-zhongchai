@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     // check to see if the user had already taken the test
     // if not, display an error; otherwise, continue with the quiz results
-    if (questionCount == 0) {
+    if (questionCount == 0 || questionCount === null) {
         message = "ERROR: Please take the quiz first, silly! ";
         $('#resultmsg').html(message);
     } else {
